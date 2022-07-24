@@ -1,0 +1,5 @@
+ffmpeg -i "D:\Website\ProxyPlayer.DrCaptcha.ir\wwwroot\Storage\source.mp4" -vf scale=-1:480 "D:\Website\ProxyPlayer.DrCaptcha.ir\wwwroot\Storage\out.mp4"
+
+
+
+ffmpeg -i input.avi -vf scale=852:480 output.avi

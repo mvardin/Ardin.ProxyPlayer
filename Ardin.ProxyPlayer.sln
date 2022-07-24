@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32630.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ardin.ProxyPlayer", "Ardin.ProxyPlayer\Ardin.ProxyPlayer.csproj", "{01853F6D-D466-4458-A970-88F45A2BADD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ardin.ProxyPlayer.Engine", "Ardin.ProxyPlayer.Engine\Ardin.ProxyPlayer.Engine.csproj", "{2161688C-B409-4566-9C2A-216E2D6D8DE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01853F6D-D466-4458-A970-88F45A2BADD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01853F6D-D466-4458-A970-88F45A2BADD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01853F6D-D466-4458-A970-88F45A2BADD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01853F6D-D466-4458-A970-88F45A2BADD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2161688C-B409-4566-9C2A-216E2D6D8DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2161688C-B409-4566-9C2A-216E2D6D8DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2161688C-B409-4566-9C2A-216E2D6D8DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2161688C-B409-4566-9C2A-216E2D6D8DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85154ABE-A3C3-44C5-B734-1B0ADF04D3B8}
+	EndGlobalSection
+EndGlobal
