@@ -21,21 +21,13 @@ namespace Ardin.ProxyPlayer.Controllers
         }
 
         [HttpGet]
-        public IActionResult Play(string filename)
+        public IActionResult Index(string filename)
         {
-            return View("Play", filename);
-        }
-        [HttpGet]
-        public IActionResult Download(string url)
-        {
-            WebClient webClient = new WebClient();
-
-            string filename = Guid.NewGuid() + ".mp4";
             var path = _config.GetValue<string>("AppSetting:Storage");
 
-            webClient.DownloadFile(url, path + filename);
+            ViewBag.VideoList = Directory.GetFiles(path, "*.mp4").Where(a => !a.Contains("_original.mp4")).Select(a => Path.GetFileName(a)).ToArray();
 
-            return RedirectToAction("Play", new { filename });
+            return View("Index", filename);
         }
     }
 }
