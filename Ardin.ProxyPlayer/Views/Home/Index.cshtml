@@ -17,18 +17,18 @@
                class="video-js"
                controls
                preload="auto"
-               width="640"
-               height="264"
+               width="1024"
+               height="768"
                data-setup="{}">
             <source src="/Storage/@Model" type="video/mp4" />
         </video>
     }
     <ul>
         <li><a href="/home/add">Add new link</a></li>
-        @foreach (var video in ViewBag.VideoList as string[])
+        @foreach (var video in ViewBag.VideoList as List<Movie>)
         {
-            var link = $"https://proxyplayer.drcaptcha.ir/home/play?filename={video}";
-            <li><a href="@link">@video</a></li>
+            var link = $"https://proxyplayer.drcaptcha.ir?filename={video.Link}";
+            <li><a href="@link">@video.Name | @video.Size MB | @video.DateAdded</a></li>
         }
     </ul>
     <script src="https://vjs.zencdn.net/7.20.1/video.min.js"></script>

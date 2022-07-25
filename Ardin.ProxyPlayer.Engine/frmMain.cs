@@ -114,7 +114,7 @@ namespace Ardin.ProxyPlayer.Engine
             try
             {
                 TelegramBotClient telegram = new TelegramBotClient("677309981:AAHQUaKSKOqXTvPGCwDJfehufoFOXX8GUx0");
-                var sentMessage = telegram.SendTextMessageAsync(77132506, $"https://proxyplayer.drcaptcha.ir/home/play?filename={filename.Replace("_original", string.Empty)}.mp4").Result;
+                var sentMessage = telegram.SendTextMessageAsync(77132506, $"https://proxyplayer.drcaptcha.ir?filename={filename.Replace("_original", string.Empty)}").Result;
             }
             catch (Exception ex)
             {

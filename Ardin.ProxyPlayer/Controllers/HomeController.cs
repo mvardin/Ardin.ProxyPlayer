@@ -25,7 +25,20 @@ namespace Ardin.ProxyPlayer.Controllers
         {
             var path = _config.GetValue<string>("AppSetting:Storage");
 
-            ViewBag.VideoList = Directory.GetFiles(path, "*.mp4").Where(a => !a.Contains("_original.mp4")).Select(a => Path.GetFileName(a)).ToArray();
+            List<Movie> movies = new List<Movie>();
+            foreach (var moviePath in Directory.GetFiles(path, "*.mp4").Where(a => !a.Contains("_original.mp4")))
+            {
+                FileInfo fileInfo = new FileInfo(moviePath);
+                Movie movie = new Movie()
+                {
+                    Name = Path.GetFileNameWithoutExtension(moviePath),
+                    DateAdded = fileInfo.CreationTime.ToString(),
+                    Link = Path.GetFileName(moviePath),
+                    Size = (fileInfo.Length / 1048576).ToString()
+                };
+                movies.Add(movie);
+            }
+            ViewBag.VideoList = movies;
 
             return View("Index", filename);
         }
