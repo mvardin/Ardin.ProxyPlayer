@@ -29,5 +29,22 @@ namespace Ardin.ProxyPlayer.Controllers
 
             return View("Index", filename);
         }
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Add(string link, string secret)
+        {
+            if (secret.Contains("aria"))
+            {
+                var path = _config.GetValue<string>("AppSetting:EnginePath");
+                System.IO.File.WriteAllText(Path.Combine(path, "DownloadList.txt"), link);
+                return Content("okey , added " + link);
+            }
+            else
+                return Content("wrong secret" + link);
+        }
     }
 }

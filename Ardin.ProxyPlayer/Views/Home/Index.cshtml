@@ -11,16 +11,20 @@
     <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
 </head>
 <body>
-    <video id="my-video"
-           class="video-js"
-           controls
-           preload="auto"
-           width="640"
-           height="264"
-           data-setup="{}">
-        <source src="/Storage/@Model" type="video/mp4" />
-    </video>
+    @if (!string.IsNullOrEmpty(Model))
+    {
+        <video id="my-video"
+               class="video-js"
+               controls
+               preload="auto"
+               width="640"
+               height="264"
+               data-setup="{}">
+            <source src="/Storage/@Model" type="video/mp4" />
+        </video>
+    }
     <ul>
+        <li><a href="/home/add">Add new link</a></li>
         @foreach (var video in ViewBag.VideoList as string[])
         {
             var link = $"https://proxyplayer.drcaptcha.ir/home/play?filename={video}";
